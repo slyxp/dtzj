@@ -1,5 +1,6 @@
 package com.tcl.funday;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
@@ -34,6 +35,11 @@ public class MainActivity extends BaseActivity {
         switch (item.getItemId()) {
             case R.id.menuAbout:
                 showSnackBar(mViewPager, "Funday");
+                break;
+
+            case R.id.menuHomePage:
+                Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+                startActivity(intent);
                 break;
 
             default:
