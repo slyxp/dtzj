@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/themeColor</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+    <!--</style>-->
+
+    <style name="OverflowStyle" parent="@android:style/Widget.DeviceDefault.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_homepage_more_light</item>
+    </style>
+
+</resources>

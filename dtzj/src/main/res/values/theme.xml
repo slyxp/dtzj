@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppCommonTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--ActionBar颜色-->
+        <item name="colorPrimary">?attr/themeColor</item>
+        <!--StatusBar颜色-->
+        <item name="colorPrimaryDark">?attr/themeStatusbarColor</item>
+        <item name="colorAccent">?attr/themeColor</item>
+    </style>
+
+    <style name="AppBaseTheme" parent="AppCommonTheme">
+        <!--Toobar background-->
+        <item name="bgToolbar">@color/comm_black</item>
+        <item name="themeColor">@color/comm_black</item>
+        <item name="themeStatusbarColor">?attr/bgToolbar</item>
+        <!--主题背景色-->
+        <item name="themeBackground">@color/commonWhite</item>
+        <item name="actionBarSize">56dip</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverflowStyle</item>
+    </style>
+
+    <!--默认主题-->
+    <style name="AppTheme" parent="AppBaseTheme"></style>
+
+</resources>

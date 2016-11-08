@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Funday.iml" filepath="$PROJECT_DIR$/Funday.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dtzj/dtzj.iml" filepath="$PROJECT_DIR$/dtzj/dtzj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tabpagerindictor/tabpagerindictor.iml" filepath="$PROJECT_DIR$/tabpagerindictor/tabpagerindictor.iml" />
     </modules>
   </component>
 </project>
