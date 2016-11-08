@@ -10,4 +10,10 @@
     <string name="navigation_integrate_title">Integrate</string>
     <string name="navigation_festival_title">Festival</string>
 
+    <array name="navigation_titles">
+        <item>Character</item>
+        <item>Cartoon</item>
+        <item>Animal</item>
+    </array>
+
 </resources>

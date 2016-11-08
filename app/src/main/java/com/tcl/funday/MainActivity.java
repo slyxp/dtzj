@@ -2,31 +2,19 @@ package com.tcl.funday;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.tcl.funday.support.adapter.FragmentAdapter;
-import com.tcl.funday.ui.fragment.AnimalFragment;
-import com.tcl.funday.ui.fragment.CartoonFragment;
-import com.tcl.funday.ui.fragment.CharacterFragment;
-
-import java.util.ArrayList;
-import java.util.List;
+import shanyao.tabpagerindictor.TabPageIndicator;
 
 public class MainActivity extends BaseActivity {
 
-    private List<Fragment> mFragmentList = new ArrayList<Fragment>();
     private FragmentAdapter mFragmentAdapter;
     private ViewPager mViewPager;
 
-    private CharacterFragment mCharacterFragment;
-    private CartoonFragment mCartoonFragment;
-    private AnimalFragment mAnimalFragment;
-
-    private int currentIndex;
-    private int screenWidth;
+    private TabPageIndicator mIndicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,21 +29,14 @@ public class MainActivity extends BaseActivity {
 
     private void initView() {
         mViewPager = (ViewPager) findViewById(R.id.main_view_pager);
-
+        mIndicator = (TabPageIndicator) findViewById(R.id.indicator);
     }
 
     private void initData() {
-        mCharacterFragment = new CharacterFragment();
-        mCartoonFragment = new CartoonFragment();
-        mAnimalFragment = new AnimalFragment();
-
-        mFragmentList.add(mCharacterFragment);
-        mFragmentList.add(mCartoonFragment);
-        mFragmentList.add(mAnimalFragment);
-
-        mFragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), mFragmentList);
+        mFragmentAdapter = new FragmentAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mFragmentAdapter);
-        mViewPager.setCurrentItem(0);
+        mIndicator.setViewPager(mViewPager);
+        mIndicator.setIndicatorMode(TabPageIndicator.IndicatorMode.MODE_NOWEIGHT_NOEXPAND_NOSAME);
     }
 
     @Override
