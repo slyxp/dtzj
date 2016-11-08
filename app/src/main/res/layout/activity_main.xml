@@ -1,42 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context="com.tcl.funday.MainActivity">
 
-    <Button
-        android:id="@+id/MODE_WEIGHT_NOEXPAND_SAME"
+    <com.tcl.funday.MyToolBar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MODE_WEIGHT_NOEXPAND_SAME" />
+        android:layout_height="50dp"
+        android:background="@color/themeColor"
+        app:titleTextColor="@color/commonWhite"
+        tools:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <Button
-        android:id="@+id/MODE_WEIGHT_NOEXPAND_NOSAME"
+    <shanyao.tabpagerindictor.TabPageIndicator
+        android:id="@+id/indicator"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MODE_WEIGHT_NOEXPAND_NOSAME" />
+        android:layout_height="40dp"
+        android:layout_below="@+id/toolbar" />
 
-    <Button
-        android:id="@+id/MODE_NOWEIGHT_NOEXPAND_SAME"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_view_pager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MODE_NOWEIGHT_NOEXPAND_SAME" />
-
-    <Button
-        android:id="@+id/MODE_NOWEIGHT_NOEXPAND_NOSAME"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MODE_NOWEIGHT_NOEXPAND_NOSAME" />
-
-    <Button
-        android:id="@+id/MODE_NOWEIGHT_EXPAND_SAME"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MODE_WEIGHT_EXPAND_SAME" />
-
-    <Button
-        android:id="@+id/MODE_NOWEIGHT_EXPAND_NOSAME"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MODE_NOWEIGHT_EXPAND_NOSAME" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/indicator" />
+</RelativeLayout>
