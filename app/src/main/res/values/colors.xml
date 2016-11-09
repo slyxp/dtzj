@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
 
+    <!--common-->
     <color name="themeColor">#3F51B5</color>
     <color name="commonWhite">#FFFFFFFF</color>
     <color name="comm_black">#FF000000</color>
+
+    <!--navigation_bar-->
+    <!--分隔线颜色-->
+    <color name="navigation_diver_line_color">#00bbcf</color>
+    <!--底部导航线颜色-->
+    <color name="navigation_indicator_line_color">#43A44b</color>
+    <!--Tab未被选中的颜色-->
+    <color name="navigation_tab_txt_color">#797979</color>
+    <!--Tab选中的颜色-->
+    <color name="navigation_tab_selected_color">#43A44b</color>
 </resources>
