@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Funday</string>
+    <string name="app_name">斗图专家</string>
     <string name="about">关于</string>
     <string name="menu_homepage">主页</string>
     <string name="navigation_animal_title">动物</string>

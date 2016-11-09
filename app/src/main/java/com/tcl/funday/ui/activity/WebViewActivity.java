@@ -23,7 +23,7 @@ import com.tcl.funday.R;
 public class WebViewActivity extends BaseActivity {
     private WebView myWebView;
     private MyToolBar myToolBar;
-    private static final String HOMEPAGE_URL = "http://www.baidu.com";
+    private static final String HOMEPAGE_URL = "http://www.dtzhuanjia.com";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

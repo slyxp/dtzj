@@ -2,7 +2,7 @@
 <resources>
 
     <!--common-->
-    <color name="themeColor">#3F51B5</color>
+    <color name="themeColor">#ff3d3d</color>
     <color name="commonWhite">#FFFFFFFF</color>
     <color name="comm_black">#FF000000</color>
 
@@ -15,4 +15,8 @@
     <color name="navigation_tab_txt_color">#797979</color>
     <!--Tab选中的颜色-->
     <color name="navigation_tab_selected_color">#43A44b</color>
+
+
+    <color name="color_ff">#F0F0F0</color>
+    <color name="color_00">#8A000000</color>
 </resources>
