@@ -5,10 +5,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import com.tcl.funday.MyToolBar;
 import com.tcl.funday.R;
@@ -16,31 +12,30 @@ import com.tcl.funday.R;
 /**
  * @author Liyang Sun
  * @Description:
- * @date 2016/11/7 15:57
+ * @date 2016/11/9 10:57
  * @copyright HAWK
  */
 
-public class WebViewActivity extends BaseActivity {
-    private WebView myWebView;
+public class AboutActivity extends BaseActivity {
     private MyToolBar myToolBar;
-    private static final String HOMEPAGE_URL = "http://www.baidu.com";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_webview);
+        setContentView(R.layout.activity_about);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.menu_homepage);
+        getSupportActionBar().setTitle(R.string.about);
         final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
         upArrow.setColorFilter(getResources().getColor(R.color.commonWhite), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
+
         initView();
         initData();
     }
 
     private void initView() {
-        myWebView = (WebView) findViewById(R.id.myWebView);
         myToolBar = (MyToolBar) findViewById(R.id.toolbar);
     }
 
@@ -51,14 +46,5 @@ public class WebViewActivity extends BaseActivity {
                 finish();
             }
         });
-        myWebView.getSettings().setJavaScriptEnabled(true);
-        myWebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        WebSettings webSettings = myWebView.getSettings();
-        webSettings.setAllowFileAccess(true);
-        webSettings.setBuiltInZoomControls(true);
-        myWebView.setWebViewClient(new WebViewClient());
-        myWebView.setWebChromeClient(new WebChromeClient());
-        myWebView.loadUrl(HOMEPAGE_URL);
     }
-
 }

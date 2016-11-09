@@ -1,7 +1,7 @@
 <resources>
 
     <string name="app_name">Funday</string>
-    <string name="menu_about">About</string>
+    <string name="about">About</string>
     <string name="menu_homepage">HomePage</string>
 
     <string name="navigation_character_title">Character</string>

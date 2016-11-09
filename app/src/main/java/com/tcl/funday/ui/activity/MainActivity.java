@@ -1,7 +1,6 @@
 package com.tcl.funday.ui.activity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
@@ -61,12 +60,14 @@ public class MainActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menuAbout:
-                showSnackBar(mViewPager, "Funday");
+//                showSnackBar(mViewPager, "Funday");
+                Intent intentAbout = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(intentAbout);
                 break;
 
             case R.id.menuHomePage:
-                Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-                startActivity(intent);
+                Intent intentHomePage = new Intent(MainActivity.this, WebViewActivity.class);
+                startActivity(intentHomePage);
                 break;
 
             default:
