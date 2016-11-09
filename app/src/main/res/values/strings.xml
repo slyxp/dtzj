@@ -11,9 +11,11 @@
     <string name="navigation_festival_title">Festival</string>
 
     <array name="navigation_titles">
-        <item>Character</item>
-        <item>Cartoon</item>
-        <item>Animal</item>
+        <item>@string/navigation_character_title</item>
+        <item>@string/navigation_cartoon_title</item>
+        <item>@string/navigation_animal_title</item>
+        <item>@string/navigation_festival_title</item>
+        <item>@string/navigation_integrate_title</item>
     </array>
 
 </resources>

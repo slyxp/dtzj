@@ -8,6 +8,8 @@ import com.tcl.funday.R;
 import com.tcl.funday.ui.fragment.AnimalFragment;
 import com.tcl.funday.ui.fragment.CartoonFragment;
 import com.tcl.funday.ui.fragment.CharacterFragment;
+import com.tcl.funday.ui.fragment.FestivalFragment;
+import com.tcl.funday.ui.fragment.IntegrateFragment;
 import com.tcl.funday.utils.CommonUtils;
 
 import java.util.ArrayList;
@@ -63,6 +65,13 @@ public class FragmentAdapter extends FragmentPagerAdapter {
                 break;
             case 2:
                 fragment = new AnimalFragment();
+                break;
+            case 3:
+                fragment = new FestivalFragment();
+                break;
+            case 4:
+                fragment = new IntegrateFragment();
+            default:
                 break;
         }
         return fragment;

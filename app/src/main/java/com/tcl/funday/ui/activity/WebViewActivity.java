@@ -1,4 +1,4 @@
-package com.tcl.funday;
+package com.tcl.funday.ui.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,8 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import com.tcl.funday.R;
 
 /**
  * @author Liyang Sun

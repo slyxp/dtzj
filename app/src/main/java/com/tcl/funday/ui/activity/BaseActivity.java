@@ -1,10 +1,11 @@
-package com.tcl.funday;
+package com.tcl.funday.ui.activity;
 
 import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.tcl.funday.R;
 import com.tcl.funday.utils.ViewUtils;
 
 /**

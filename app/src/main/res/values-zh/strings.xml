@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Funday</string>
+    <string name="menu_about">关于</string>
+    <string name="menu_homepage">主页</string>
+    <string name="navigation_animal_title">动物</string>
+    <string name="navigation_cartoon_title">卡通</string>
+    <string name="navigation_character_title">人物</string>
+    <string name="navigation_festival_title">节日</string>
+    <string name="navigation_integrate_title">套图</string>
+</resources>

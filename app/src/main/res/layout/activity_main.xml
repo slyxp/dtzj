@@ -5,7 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tcl.funday.MainActivity">
+    tools:context="com.tcl.funday.ui.activity.MainActivity">
 
     <com.tcl.funday.MyToolBar
         android:id="@+id/toolbar"

@@ -1,4 +1,4 @@
-package com.tcl.funday;
+package com.tcl.funday.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.tcl.funday.R;
 import com.tcl.funday.support.adapter.FragmentAdapter;
 import shanyao.tabpagerindictor.TabPageIndicator;
 
