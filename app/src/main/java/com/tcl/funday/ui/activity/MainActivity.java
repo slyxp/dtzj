@@ -82,6 +82,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // 双击返回键退出程序
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
             if (System.currentTimeMillis() - exitTime > 2000) {
                 showMessage(getString(R.string.toast_press_again_to_exit));

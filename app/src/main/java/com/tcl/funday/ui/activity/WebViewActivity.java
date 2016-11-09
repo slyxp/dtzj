@@ -32,6 +32,8 @@ public class WebViewActivity extends BaseActivity {
         setContentView(R.layout.activity_webview);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.menu_homepage);
+
+        // 设置返回按钮为白色
         final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
         upArrow.setColorFilter(getResources().getColor(R.color.commonWhite), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
