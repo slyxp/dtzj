@@ -1,4 +1,4 @@
-package com.tcl.funday;
+package com.tcl.funday.support;
 
 import android.content.Context;
 import android.support.annotation.Nullable;

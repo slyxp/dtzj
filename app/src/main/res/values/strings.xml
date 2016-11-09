@@ -18,4 +18,6 @@
         <item>@string/navigation_integrate_title</item>
     </array>
 
+    <string name="toast_press_again_to_exit">Press again to exit</string>
+
 </resources>

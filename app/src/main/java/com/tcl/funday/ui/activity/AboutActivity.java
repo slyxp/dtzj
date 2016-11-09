@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.tcl.funday.MyToolBar;
+import com.tcl.funday.support.MyToolBar;
 import com.tcl.funday.R;
 
 /**
  * @author Liyang Sun
- * @Description:
+ * @Description: "关于"页面
  * @date 2016/11/9 10:57
  * @copyright HAWK
  */

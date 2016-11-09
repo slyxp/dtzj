@@ -10,12 +10,12 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.tcl.funday.MyToolBar;
+import com.tcl.funday.support.MyToolBar;
 import com.tcl.funday.R;
 
 /**
  * @author Liyang Sun
- * @Description:
+ * @Description: "主页"页面
  * @date 2016/11/7 15:57
  * @copyright HAWK
  */

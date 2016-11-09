@@ -2,7 +2,9 @@ package com.tcl.funday.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.view.ViewPager;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -17,6 +19,8 @@ public class MainActivity extends BaseActivity {
 
     private FragmentAdapter mFragmentAdapter;
     private ViewPager mViewPager;
+
+    private long exitTime = 0;
 
     private TabPageIndicator mIndicator;
 
@@ -74,5 +78,20 @@ public class MainActivity extends BaseActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if (System.currentTimeMillis() - exitTime > 2000) {
+                showMessage(getString(R.string.toast_press_again_to_exit));
+                exitTime = System.currentTimeMillis();
+            } else {
+                finish();
+            }
+
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

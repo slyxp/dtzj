@@ -11,7 +11,7 @@ import com.tcl.funday.R;
 
 /**
  * @author Liyang Sun
- * @Description:
+ * @Description: "套图"页面
  * @date 2016/11/9 10:18
  * @copyright HAWK
  */

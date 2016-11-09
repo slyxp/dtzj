@@ -29,4 +29,5 @@ dependencies {
     compile 'com.android.support:design:24.2.1'
     compile 'com.squareup.okhttp:okhttp:2.6.0'
     compile project(':tabpagerindictor')
+    compile project(':grid')
 }
