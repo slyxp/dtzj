@@ -11,6 +11,11 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    productFlavors {
+        product {
+            buildConfigField "String", "CHANNEL", "\"product\""
+        }
+    }
     buildTypes {
         debug {
             buildConfigField "boolean", "LOG_DEBUG", "false"
@@ -64,6 +69,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:design:24.2.1'
     compile 'com.squareup.okhttp:okhttp:2.6.0'
+    compile 'com.alibaba:fastjson:1.2.6'
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.17'
     compile project(':tabpagerindictor')
     compile project(':grid')
 }
