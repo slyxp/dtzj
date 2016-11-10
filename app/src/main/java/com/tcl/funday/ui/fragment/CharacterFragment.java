@@ -1,6 +1,7 @@
 package com.tcl.funday.ui.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -8,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
@@ -68,21 +70,16 @@ public class CharacterFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         View characterView = inflater.inflate(R.layout.fragment_character, container, false);
 
+        initView(characterView);
+        initData();
+
         return characterView;
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        initView();
-        initData();
-    }
-
-    private void initView() {
+    private void initView(View view) {
         if (getActivity() != null) {
-            mSwipRefreshLayout = (SwipeRefreshLayout) getActivity().findViewById(R.id.swipe_refresh_layout);
-            mRecyclerView = (RecyclerView) getActivity().findViewById(R.id.list);
+            mSwipRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh_layout);
+            mRecyclerView = (RecyclerView) view.findViewById(R.id.list);
         }
     }
 
@@ -102,9 +99,15 @@ public class CharacterFragment extends Fragment {
         mRecyclerView.setAdapter(mHeaderAndFooterRecyclerViewAdapter);
 
         //setLayoutManager
+        // 瀑布流
         ExStaggeredGridLayoutManager manager = new ExStaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         manager.setSpanSizeLookup(new HeaderSpanSizeLookup((HeaderAndFooterRecyclerViewAdapter) mRecyclerView.getAdapter(), manager.getSpanCount()));
         mRecyclerView.setLayoutManager(manager);
+
+        // 普通的GridLayout
+//        GridLayoutManager manager = new GridLayoutManager(getContext(), 2);
+//        manager.setSpanSizeLookup(new HeaderSpanSizeLookup((HeaderAndFooterRecyclerViewAdapter) mRecyclerView.getAdapter(), manager.getSpanCount()));
+//        mRecyclerView.setLayoutManager(manager);
 
 //        RecyclerViewUtils.setHeaderView(mRecyclerView, new SampleHeader(this));
 
@@ -257,7 +260,7 @@ public class CharacterFragment extends Fragment {
 
         private int largeCardHeight, smallCardHeight;
 
-        public DataAdapter(Context context) {
+        private DataAdapter(Context context) {
             mLayoutInflater = LayoutInflater.from(context);
             largeCardHeight = (int) context.getResources().getDisplayMetrics().density * 300;
             smallCardHeight = (int) context.getResources().getDisplayMetrics().density * 200;

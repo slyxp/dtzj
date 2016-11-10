@@ -3,6 +3,7 @@ package com.tcl.funday.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -11,7 +12,15 @@ import android.view.MenuItem;
 import com.tcl.funday.MyApplication;
 import com.tcl.funday.R;
 import com.tcl.funday.support.adapter.FragmentAdapter;
+import com.tcl.funday.ui.fragment.AnimalFragment;
+import com.tcl.funday.ui.fragment.CartoonFragment;
+import com.tcl.funday.ui.fragment.CharacterFragment;
+import com.tcl.funday.ui.fragment.FestivalFragment;
+import com.tcl.funday.ui.fragment.IntegrateFragment;
 import com.tcl.funday.utils.CommonUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import shanyao.tabpagerindictor.TabPageIndicator;
 
@@ -41,8 +50,24 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initData() {
+//        List<Fragment> fragments = new ArrayList<Fragment>();
+
+//        CharacterFragment characterFragment = new CharacterFragment();
+//        CartoonFragment cartoonFragment = new CartoonFragment();
+//        AnimalFragment animalFragment = new AnimalFragment();
+//        FestivalFragment festivalFragment = new FestivalFragment();
+//        IntegrateFragment integrateFragment = new IntegrateFragment();
+//
+//        fragments.add(characterFragment);
+//        fragments.add(cartoonFragment);
+//        fragments.add(animalFragment);
+//        fragments.add(festivalFragment);
+//        fragments.add(integrateFragment);
+
         mFragmentAdapter = new FragmentAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mFragmentAdapter);
+        mViewPager.setCurrentItem(0);
+
         mIndicator.setViewPager(mViewPager);
         mIndicator.setIndicatorMode(TabPageIndicator.IndicatorMode.MODE_NOWEIGHT_NOEXPAND_NOSAME);
         mIndicator.setDividerColor(getResources().getColor(R.color.comm_water));

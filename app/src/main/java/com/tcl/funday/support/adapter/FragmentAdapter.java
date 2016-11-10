@@ -35,6 +35,7 @@ public class FragmentAdapter extends FragmentPagerAdapter {
     public FragmentAdapter(FragmentManager fm, List<Fragment> fragmentList) {
         super(fm);
         mFragmentList = fragmentList;
+        mTitles = CommonUtils.getStringArray(R.array.navigation_titles);
     }
 
     @Override
