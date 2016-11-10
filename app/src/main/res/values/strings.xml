@@ -5,6 +5,8 @@
     <string name="menu_homepage">HomePage</string>
     <string name="search">Search</string>
 
+    <string name="navigation_rank_title">Rank</string>
+    <string name="navigation_new_title">New</string>
     <string name="navigation_character_title">Character</string>
     <string name="navigation_cartoon_title">Cartoon</string>
     <string name="navigation_animal_title">Animal</string>
@@ -12,6 +14,8 @@
     <string name="navigation_festival_title">Festival</string>
 
     <array name="navigation_titles">
+        <item>@string/navigation_rank_title</item>
+        <item>@string/navigation_new_title</item>
         <item>@string/navigation_character_title</item>
         <item>@string/navigation_cartoon_title</item>
         <item>@string/navigation_animal_title</item>

@@ -71,7 +71,7 @@ public class MainActivity extends BaseActivity {
         mViewPager.setCurrentItem(0);
 
         mIndicator.setViewPager(mViewPager);
-        mIndicator.setIndicatorMode(TabPageIndicator.IndicatorMode.MODE_NOWEIGHT_NOEXPAND_NOSAME);
+        mIndicator.setIndicatorMode(TabPageIndicator.IndicatorMode.MODE_NOWEIGHT_EXPAND_NOSAME);
         mIndicator.setDividerColor(getResources().getColor(R.color.comm_water));
         mIndicator.setDividerPadding(CommonUtils.dip2px(MyApplication.getContext(), 10));
         mIndicator.setIndicatorColor(getResources().getColor(R.color.themeColor));

@@ -30,12 +30,11 @@ import java.util.ArrayList;
 
 /**
  * @author Liyang Sun
- * @Description: "卡通"页面
- * @date 2016/11/7 19:47
- * @copyright HAWK
+ * @Description:
+ * @date 2016/11/10 22:40
+ * @copyright
  */
-
-public class CartoonFragment extends Fragment {
+public class RankFragment extends Fragment {
 
     /**服务器端一共多少条数据*/
     private static final int TOTAL_COUNTER = 64;
@@ -57,7 +56,7 @@ public class CartoonFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View cartoonView = inflater.inflate(R.layout.fragment_cartoon, container, false);
+        View cartoonView = inflater.inflate(R.layout.fragment_rank, container, false);
 
         initView(cartoonView);
         initData();
@@ -130,15 +129,15 @@ public class CartoonFragment extends Fragment {
 
     private class PreviewHandler extends Handler {
 
-        private WeakReference<CartoonFragment> ref;
+        private WeakReference<RankFragment> ref;
 
-        PreviewHandler(CartoonFragment fragment) {
+        PreviewHandler(RankFragment fragment) {
             ref = new WeakReference<>(fragment);
         }
 
         @Override
         public void handleMessage(Message msg) {
-            final CartoonFragment fragment = ref.get();
+            final RankFragment fragment = ref.get();
             if (fragment.getActivity() == null || fragment.getActivity().isFinishing()) {
                 return;
             }

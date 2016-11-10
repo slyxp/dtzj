@@ -30,13 +30,11 @@ import java.util.ArrayList;
 
 /**
  * @author Liyang Sun
- * @Description: "卡通"页面
- * @date 2016/11/7 19:47
- * @copyright HAWK
+ * @Description:
+ * @date 2016/11/10 22:46
+ * @copyright
  */
-
-public class CartoonFragment extends Fragment {
-
+public class NewFragment extends Fragment {
     /**服务器端一共多少条数据*/
     private static final int TOTAL_COUNTER = 64;
 
@@ -48,16 +46,16 @@ public class CartoonFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
 
-    private DataAdapter mDataAdapter;
+    private NewFragment.DataAdapter mDataAdapter;
 
-    private PreviewHandler mHandler = new PreviewHandler(this);
+    private NewFragment.PreviewHandler mHandler = new NewFragment.PreviewHandler(this);
     private HeaderAndFooterRecyclerViewAdapter mHeaderAndFooterRecyclerViewAdapter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View cartoonView = inflater.inflate(R.layout.fragment_cartoon, container, false);
+        View cartoonView = inflater.inflate(R.layout.fragment_rank, container, false);
 
         initView(cartoonView);
         initData();
@@ -80,7 +78,7 @@ public class CartoonFragment extends Fragment {
 
         mCurrentCounter = dataList.size();
 
-        mDataAdapter = new DataAdapter(getContext());
+        mDataAdapter = new NewFragment.DataAdapter(getContext());
         mDataAdapter.addAll(dataList);
 
         mHeaderAndFooterRecyclerViewAdapter = new HeaderAndFooterRecyclerViewAdapter(mDataAdapter);
@@ -130,15 +128,15 @@ public class CartoonFragment extends Fragment {
 
     private class PreviewHandler extends Handler {
 
-        private WeakReference<CartoonFragment> ref;
+        private WeakReference<NewFragment> ref;
 
-        PreviewHandler(CartoonFragment fragment) {
+        PreviewHandler(NewFragment fragment) {
             ref = new WeakReference<>(fragment);
         }
 
         @Override
         public void handleMessage(Message msg) {
-            final CartoonFragment fragment = ref.get();
+            final NewFragment fragment = ref.get();
             if (fragment.getActivity() == null || fragment.getActivity().isFinishing()) {
                 return;
             }
@@ -223,7 +221,7 @@ public class CartoonFragment extends Fragment {
 
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            return new ViewHolder(mLayoutInflater.inflate(R.layout.sample_item_card, parent, false));
+            return new NewFragment.DataAdapter.ViewHolder(mLayoutInflater.inflate(R.layout.sample_item_card, parent, false));
         }
 
         @Override
@@ -231,7 +229,7 @@ public class CartoonFragment extends Fragment {
 
             String item = mDataList.get(position);
 
-            ViewHolder viewHolder = (ViewHolder) holder;
+            NewFragment.DataAdapter.ViewHolder viewHolder = (NewFragment.DataAdapter.ViewHolder) holder;
             viewHolder.textView.setText(item);
         }
 
@@ -251,7 +249,7 @@ public class CartoonFragment extends Fragment {
                 textView.setOnClickListener( new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        String text = mDataList.get(RecyclerViewUtils.getAdapterPosition(mRecyclerView, ViewHolder.this));
+                        String text = mDataList.get(RecyclerViewUtils.getAdapterPosition(mRecyclerView, NewFragment.DataAdapter.ViewHolder.this));
                         Toast.makeText(getContext(), text, Toast.LENGTH_SHORT).show();
                     }
                 });
