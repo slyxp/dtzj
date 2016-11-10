@@ -3,6 +3,7 @@
     <string name="app_name">Bucket expert</string>
     <string name="about">About</string>
     <string name="menu_homepage">HomePage</string>
+    <string name="search">Search</string>
 
     <string name="navigation_character_title">Character</string>
     <string name="navigation_cartoon_title">Cartoon</string>

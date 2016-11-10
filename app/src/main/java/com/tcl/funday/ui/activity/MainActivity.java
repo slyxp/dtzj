@@ -2,8 +2,6 @@ package com.tcl.funday.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -11,16 +9,9 @@ import android.view.MenuItem;
 
 import com.tcl.funday.MyApplication;
 import com.tcl.funday.R;
+import com.tcl.funday.support.MyToolBar;
 import com.tcl.funday.support.adapter.FragmentAdapter;
-import com.tcl.funday.ui.fragment.AnimalFragment;
-import com.tcl.funday.ui.fragment.CartoonFragment;
-import com.tcl.funday.ui.fragment.CharacterFragment;
-import com.tcl.funday.ui.fragment.FestivalFragment;
-import com.tcl.funday.ui.fragment.IntegrateFragment;
 import com.tcl.funday.utils.CommonUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import shanyao.tabpagerindictor.TabPageIndicator;
 
@@ -28,6 +19,7 @@ public class MainActivity extends BaseActivity {
 
     private FragmentAdapter mFragmentAdapter;
     private ViewPager mViewPager;
+    private MyToolBar myToolBar;
 
     private long exitTime = 0;
 
@@ -45,8 +37,18 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initView() {
+        myToolBar = (MyToolBar) findViewById(R.id.toolbar);
         mViewPager = (ViewPager) findViewById(R.id.main_view_pager);
         mIndicator = (TabPageIndicator) findViewById(R.id.indicator);
+
+        // 通过调整Toolbar高度来设置通知栏
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//            myToolBar.getLayoutParams().height = ViewUtils.getStatusBarHeight() + CommonUtils.dip2px(MyApplication.getContext(), 50);
+//            myToolBar.setPadding(myToolBar.getPaddingLeft(), ViewUtils.getStatusBarHeight(),
+//                    myToolBar.getPaddingRight(), myToolBar.getPaddingBottom());
+//        }
+
+        setSupportActionBar(myToolBar);
     }
 
     private void initData() {

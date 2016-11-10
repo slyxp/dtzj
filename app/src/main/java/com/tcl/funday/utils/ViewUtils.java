@@ -29,4 +29,13 @@ public class ViewUtils {
     public static void showSnackBar(View view, int resId) {
         Snackbar.make(view, resId, Snackbar.LENGTH_SHORT).show();
     }
+
+    public static int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = CommonUtils.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = CommonUtils.getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
+    }
 }
