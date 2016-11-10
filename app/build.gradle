@@ -1,8 +1,26 @@
 apply plugin: 'com.android.application'
 
+def releaseTime() {
+    return new Date().format("yyyyMMdd_HHmmss")
+}
+
 android {
     compileSdkVersion 24
     buildToolsVersion '25'
+    signingConfigs {
+        release {
+            storeFile file('keystore.jks')
+            storePassword 'liyang.sun'
+            keyAlias 'DTZJ'
+            keyPassword 'sunliyang'
+        }
+        debug {
+            storeFile file('keystore.jks')
+            storePassword 'liyang.sun'
+            keyAlias 'DTZJ'
+            keyPassword 'sunliyang'
+        }
+    }
     defaultConfig {
         applicationId "com.tcl.funday"
         minSdkVersion 15
@@ -22,12 +40,14 @@ android {
             zipAlignEnabled true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
         release {
             buildConfigField "boolean", "LOG_DEBUG", "true"
             zipAlignEnabled true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     android.applicationVariants.all { variant ->
@@ -54,6 +74,10 @@ android {
                         rename("BucketExpert.apk", "BucketExpert" + "_" + versionName + "_" + productFlavorsName + "_" + releaseTime() + "_" + buildType.name + ".apk")
                     }
                 }
+            }
+
+            output.assemble.doLast {
+                delete fileTree(dir: 'build/outputs/apk', include: "*unaligned*.apk")
             }
         }
     }
