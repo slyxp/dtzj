@@ -5,6 +5,7 @@
     <color name="themeColor">#ff3d3d</color>
     <color name="commonWhite">#FFFFFFFF</color>
     <color name="comm_black">#FF000000</color>
+    <color name="comm_water">#00FFFFFF</color>
 
     <!--navigation_bar-->
     <!--分隔线颜色-->

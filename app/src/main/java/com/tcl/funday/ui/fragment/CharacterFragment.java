@@ -95,7 +95,7 @@ public class CharacterFragment extends Fragment {
 
         mCurrentCounter = dataList.size();
 
-        mDataAdapter = new DataAdapter(getActivity());
+        mDataAdapter = new DataAdapter(getContext());
         mDataAdapter.addAll(dataList);
 
         mHeaderAndFooterRecyclerViewAdapter = new HeaderAndFooterRecyclerViewAdapter(mDataAdapter);
@@ -133,7 +133,7 @@ public class CharacterFragment extends Fragment {
                         }
                         mSwipRefreshLayout.setRefreshing(false);
                     }
-                }, 2000);
+                }, 1500);
             }
         });
     }
@@ -241,7 +241,7 @@ public class CharacterFragment extends Fragment {
                 }
 
                 //模拟一下网络请求失败的情况
-                if (NetworkUtils.isNetAvailable(getActivity())) {
+                if (NetworkUtils.isNetAvailable(getContext())) {
                     mHandler.sendEmptyMessage(-1);
                 } else {
                     mHandler.sendEmptyMessage(-3);
