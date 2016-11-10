@@ -13,12 +13,43 @@ android {
     }
     buildTypes {
         debug {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            zipAlignEnabled true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            zipAlignEnabled true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+
+            def outputFile = output.outputFile
+            def fileName = "BucketExpert.apk"
+            def versionName = "${defaultConfig.versionName}.${defaultConfig.versionCode}"
+            output.outputFile = new File(outputFile.parent, fileName)
+
+            delete fileTree(dir: output.outputFile.parent, include: '*unaligned*.apk')
+
+            if (output.zipAlign != null) {
+                output.zipAlign.doLast {
+                    copy {
+                        from output.outputFile
+                        into output.outputFile.parent
+                        def productFlavorsName = "";
+                        if (variant.productFlavors.size() > 0) {
+                            productFlavorsName = variant.productFlavors[0].name
+                        } else {
+                            productFlavorsName = variant.name
+                        }
+                        rename("BucketExpert.apk", "BucketExpert" + "_" + versionName + "_" + productFlavorsName + "_" + releaseTime() + "_" + buildType.name + ".apk")
+                    }
+                }
+            }
         }
     }
 }
@@ -36,3 +67,11 @@ dependencies {
     compile project(':tabpagerindictor')
     compile project(':grid')
 }
+
+task deleteFiles(type: Delete) {
+    delete fileTree('build/outputs/apk/') {
+        include '**/*.apk'
+    }
+}
+
+preBuild.dependsOn('deleteFiles')
