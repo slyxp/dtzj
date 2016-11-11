@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.EditText;
 
 import com.tcl.funday.R;
 import com.tcl.funday.support.MyToolBar;
@@ -18,6 +19,7 @@ import com.tcl.funday.support.MyToolBar;
 
 public class SearchActivity extends BaseActivity {
 
+    private EditText mSearchEt;
     private MyToolBar myToolBar;
 
     @Override
@@ -40,6 +42,7 @@ public class SearchActivity extends BaseActivity {
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
 
         myToolBar = (MyToolBar) findViewById(R.id.toolbar);
+        mSearchEt = (EditText) findViewById(R.id.search_et);
     }
 
     private void initData() {
@@ -49,5 +52,6 @@ public class SearchActivity extends BaseActivity {
                 finish();
             }
         });
+        mSearchEt.requestFocus();
     }
 }

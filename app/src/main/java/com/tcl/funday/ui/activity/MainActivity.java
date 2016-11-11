@@ -12,6 +12,7 @@ import com.tcl.funday.R;
 import com.tcl.funday.support.MyToolBar;
 import com.tcl.funday.support.adapter.FragmentAdapter;
 import com.tcl.funday.utils.CommonUtils;
+import com.tcl.funday.utils.Logger;
 
 import shanyao.tabpagerindictor.TabPageIndicator;
 
@@ -32,6 +33,8 @@ public class MainActivity extends BaseActivity {
 
         initView();
         initData();
+        Logger.d("SLY", "hahaha");
+        Logger.e("SLY", "123456");
     }
 
     private void initView() {

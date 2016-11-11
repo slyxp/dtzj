@@ -17,6 +17,8 @@
         <item name="themeBackground">@color/commonWhite</item>
         <item name="actionBarSize">56dip</item>
         <item name="android:actionOverflowButtonStyle">@style/OverflowStyle</item>
+        <!--EditText下划线颜色-->
+        <item name="colorAccent">@color/commonWhite</item>
     </style>
 
     <!--默认主题-->
