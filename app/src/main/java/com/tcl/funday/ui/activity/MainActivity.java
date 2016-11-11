@@ -30,13 +30,13 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportActionBar().setTitle(R.string.app_name);
-
         initView();
         initData();
     }
 
     private void initView() {
+        getSupportActionBar().setTitle(R.string.app_name);
+
         myToolBar = (MyToolBar) findViewById(R.id.toolbar);
         mViewPager = (ViewPager) findViewById(R.id.main_view_pager);
         mIndicator = (TabPageIndicator) findViewById(R.id.indicator);
@@ -90,6 +90,11 @@ public class MainActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.menuSearch:
+                Intent intentSearch = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(intentSearch);
+                break;
+
             case R.id.menuAbout:
 //                showSnackBar(mViewPager, "Funday");
                 Intent intentAbout = new Intent(MainActivity.this, AboutActivity.class);

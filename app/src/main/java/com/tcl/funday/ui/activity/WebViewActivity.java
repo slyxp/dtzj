@@ -30,6 +30,12 @@ public class WebViewActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_webview);
+
+        initView();
+        initData();
+    }
+
+    private void initView() {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.menu_homepage);
 
@@ -37,11 +43,7 @@ public class WebViewActivity extends BaseActivity {
         final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
         upArrow.setColorFilter(getResources().getColor(R.color.commonWhite), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
-        initView();
-        initData();
-    }
 
-    private void initView() {
         myWebView = (WebView) findViewById(R.id.myWebView);
         myToolBar = (MyToolBar) findViewById(R.id.toolbar);
     }

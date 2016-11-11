@@ -6,24 +6,25 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.tcl.funday.support.MyToolBar;
 import com.tcl.funday.R;
+import com.tcl.funday.support.MyToolBar;
 
 /**
  * @author Liyang Sun
- * @Description: "关于"页面
- * @date 2016/11/9 10:57
+ * @Description:
+ * @date 2016/11/11 16:35
  * @copyright HAWK
  */
 
-public class AboutActivity extends BaseActivity {
+public class SearchActivity extends BaseActivity {
+
     private MyToolBar myToolBar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_about);
+        setContentView(R.layout.activity_search);
 
         initView();
         initData();
@@ -31,7 +32,7 @@ public class AboutActivity extends BaseActivity {
 
     private void initView() {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.about);
+        getSupportActionBar().setTitle("");
 
         // 设置返回按钮为白色
         final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
