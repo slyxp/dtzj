@@ -33,8 +33,6 @@ public class MainActivity extends BaseActivity {
 
         initView();
         initData();
-        Logger.d("SLY", "hahaha");
-        Logger.e("SLY", "123456");
     }
 
     private void initView() {
