@@ -52,6 +52,6 @@ public class SearchActivity extends BaseActivity {
                 finish();
             }
         });
-        mSearchEt.requestFocus();
+//        mSearchEt.requestFocus();
     }
 }

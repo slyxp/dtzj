@@ -25,6 +25,8 @@
                 android:layout_height="45dp"
                 android:layout_marginRight="70dp"
                 android:gravity="center_vertical"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:singleLine="true"
                 android:textColor="@color/commonWhite" />
 
