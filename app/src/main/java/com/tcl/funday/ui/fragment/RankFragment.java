@@ -222,7 +222,7 @@ public class RankFragment extends Fragment {
 
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            return new ViewHolder(mLayoutInflater.inflate(R.layout.detail_item_card, parent, false));
+            return new ViewHolder(mLayoutInflater.inflate(R.layout.common_detail_item_square, parent, false));
         }
 
         @Override
